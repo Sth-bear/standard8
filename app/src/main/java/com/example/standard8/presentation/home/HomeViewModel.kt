@@ -9,9 +9,12 @@ import com.example.standard8.data.util.toData
 import com.example.standard8.domain.model.ImageDocumentEntity
 import com.example.standard8.domain.model.ImageEntity
 import com.example.standard8.domain.repository.KakaoRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel(private val repository: KakaoRepository):ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(private val repository: KakaoRepository):ViewModel() {
     private val _images = MutableLiveData<List<ImageDocument>>()
     val images : LiveData<List<ImageDocument>> get() = _images
 

@@ -11,10 +11,12 @@ import com.example.standard8.R
 import com.example.standard8.databinding.ActivityMainBinding
 import com.example.standard8.presentation.bookmark.BookMarkFragment
 import com.example.standard8.presentation.home.HomeFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 private const val TAG_SEARCH = "Home_fragment"
 private const val TAG_BOOK = "book_mark_fragment"
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {

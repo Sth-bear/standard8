@@ -4,8 +4,9 @@ import com.example.standard8.data.datasource.KakaoRemoteDataSource
 import com.example.standard8.data.util.toEntity
 import com.example.standard8.domain.model.ImageEntity
 import com.example.standard8.domain.repository.KakaoRepository
+import javax.inject.Inject
 
-class KakaoRepositoryImpl(private val kakaoRemoteDataSource: KakaoRemoteDataSource): KakaoRepository {
+class KakaoRepositoryImpl @Inject constructor(private val kakaoRemoteDataSource: KakaoRemoteDataSource): KakaoRepository {
     override suspend fun getImage(query: String): ImageEntity {
         return kakaoRemoteDataSource.getImage(query).toEntity()
     }

@@ -13,6 +13,7 @@ import com.example.standard8.R
 import com.example.standard8.data.model.local.ImageDocument
 import com.example.standard8.databinding.FragmentHomeBinding
 
+
 class HomeFragment : Fragment() {
     private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
     private val viewModel by activityViewModels<HomeViewModel>{HomeViewmodelFactory()}

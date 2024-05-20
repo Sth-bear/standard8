@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id ("kotlin-kapt")
-//    id ("dagger.hilt.android.plugin")
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -45,11 +45,8 @@ android {
 dependencies {
     implementation("com.squareup.picasso:picasso:2.8")
 
-    implementation("com.google.dagger:hilt-android:2.28-alpha")
-    kapt("com.google.dagger:hilt-android-compiler:2.28-alpha")
-
-    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-    kapt("androidx.hilt:hilt-compiler:1.2.0")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
     implementation("com.squareup.picasso:picasso:2.8")

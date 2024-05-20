@@ -14,7 +14,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-
+@Module
+@InstallIn(SingletonComponent::class) //종속성 주입 -> private fun 은 접근 제한자. public에만 설정
 object RetrofitClient {
     private const val BASE_URL = "https://dapi.kakao.com/v2/search/"
     private val env = dotenv{
@@ -48,12 +49,14 @@ object RetrofitClient {
             .build()
     }
 
+
     private val searchRetrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(createOkHttpClient()).build()
 
-
+    @Provides
+    @Singleton
     fun provideKakaoService(): KakaoService {
         return searchRetrofit.create(KakaoService::class.java)
     }
